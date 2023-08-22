@@ -1,0 +1,15 @@
+.cell {
+    width: 218.33px;
+    height: 218.33px;
+
+    background: var(--nord1);
+    border-radius: 12px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cell:hover {
+    background: var(--nord2);
+}

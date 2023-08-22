@@ -1,0 +1,29 @@
+.authContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    width: 400px;
+    min-height: 595px;
+    padding: 40px 24px;
+    /*background: #FFFFFF;*/
+    background: var(--nord1);
+    gap: 20px;
+
+    box-shadow: 0 0 10px 3px rgba(0, 0, 0, 0.1);
+    border-radius: 16px;
+    justify-content: space-between;
+}
+
+.authForm {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+}

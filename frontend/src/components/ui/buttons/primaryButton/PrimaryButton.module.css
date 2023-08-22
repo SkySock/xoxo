@@ -1,0 +1,49 @@
+.btn {
+    display: flex;
+    /*flex-direction: row;*/
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+
+    background: var(--nord9);
+    border-radius: 12px;
+    width: 100%;
+
+    font-weight: 500;
+    color: var(--nord6);
+    letter-spacing: 0.24px;
+}
+
+.btn:hover {
+    background: var(--nord10);
+}
+
+.btn:disabled {
+    background: rgba(129, 161, 193, 0.3);
+    cursor: default;
+}
+
+.btn.m {
+    padding: 12px 20px;
+    gap: 8px;
+    height: 48px;
+
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0.24px;
+}
+
+.btn.s {
+    height: 36px;
+    padding: 6px 16px;
+
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0.25px;
+}
+
+.btn.onlyIcon {
+    padding: 12px;
+    height: 48px;
+    width: 48px;
+}

@@ -1,0 +1,37 @@
+services:
+  api:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    command: yarn dev
+    ports:
+      - "3000:3000"
+    env_file:
+      - ./backend/.env
+    volumes:
+      - ./backend:/usr/src/app
+      - /usr/src/app/node_modules
+    depends_on:
+      - postgres
+    entrypoint: ./entrypoint.sh
+
+  frontend:
+    build: ./frontend
+    command: yarn dev
+    volumes:
+      - ./frontend:/usr/src/app
+      - /usr/src/app/node_modules
+    ports:
+      - "5173:5173"
+
+  postgres:
+    image: postgres:15.3
+    volumes:
+      - pg_data:/var/lib/postgresql/data/
+    env_file:
+      - ./backend/.env
+    ports:
+      - '5432:5432'
+
+volumes:
+  pg_data:

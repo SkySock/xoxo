@@ -1,0 +1,39 @@
+.item {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 4px 12px;
+    gap: 10px;
+
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+
+    letter-spacing: 0.24px;
+
+    /*color: #373745;*/
+    color: var(--nord6);
+    /*outline: inherit;*/
+    text-decoration: none;
+    cursor: default;
+}
+
+.item:hover {
+    /*background: #F7F7F7;*/
+    background: var(--nord2);
+    border-radius: 200px;
+
+}
+
+.active {
+    /*background: #60C2AA;*/
+    background: var(--nord9);
+    border-radius: 200px;
+    /*color: white;*/
+    /*color: var(--nord0);*/
+}
+
+.active:hover {
+    /*background: #60C2AA;*/
+    background: var(--nord9);
+}

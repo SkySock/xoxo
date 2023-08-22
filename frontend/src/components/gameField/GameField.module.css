@@ -1,0 +1,40 @@
+.gameBoard {
+    width: 663px;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    gap: 4px;
+
+    filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.1));
+}
+
+.gameStep {
+    width: 400px;
+    height: 48px;
+    padding: 12px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /* Gray / 700
+
+    Text
+    */
+    background: var(--nord1);
+    /* Elevation / Lv2 */
+
+    box-shadow: 0 0 10px 3px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+    /* identical to box height, or 120% */
+
+    letter-spacing: 0.15px;
+
+    /* Gray / White */
+
+    color: var(--nord6);
+}

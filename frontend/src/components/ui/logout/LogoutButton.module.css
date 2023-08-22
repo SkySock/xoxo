@@ -1,0 +1,9 @@
+.logoutBtn {
+    height: 18px;
+    margin: 7px;
+    color: var(--nord6);
+}
+
+.logoutBtn:hover {
+    color: var(--nord11);
+}

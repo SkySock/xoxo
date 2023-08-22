@@ -1,0 +1,76 @@
+.signUpForm {
+    /*align-items: center;*/
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+}
+
+
+.inputName {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+}
+
+.ageAndSex {
+    display: flex;
+    gap: 40px;
+    width: 100%;
+    color: var(--nord6);
+}
+
+.inputAge {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.radioSex {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.radioButtons {
+    display: flex;
+    gap: 8px;
+    height: 48px;
+}
+
+.formRadio {
+    height: 48px;
+    width: 48px;
+    margin: 0;
+}
+
+.formRadio input[type=radio] {
+    display: none;
+    width: 0;
+    height: 0;
+}
+
+.formRadio label {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    position: relative;
+    margin-right: 0;
+    border-radius: 24px;
+    border: 1px solid var(--nord2);
+    background: var(--nord3);
+    padding: 8px;
+}
+
+.formRadio label:hover {
+    border: 1px solid var(--nord9);
+}
+
+.formRadio input[type=radio]:checked + label {
+    background: var(--nord10);
+    border: none;
+}

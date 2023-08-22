@@ -1,0 +1,17 @@
+.title {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 150%;
+    /* identical to box height, or 36px */
+
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: space-between;
+
+    /* Gray / 700 */
+
+    /*color: #373745;*/
+    color: var(--nord6);
+
+}

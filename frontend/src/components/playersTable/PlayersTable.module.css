@@ -1,0 +1,65 @@
+.row {
+    display: flex;
+    padding: 12px 8px;
+    gap: 16px;
+
+    width: 100%;
+
+    /* Gray / White */
+
+    /*background: var(--nord1);*/
+    /* Border / Bottom */
+
+    box-shadow: inset 0px -1px 0px var(--nord2);
+}
+
+.row th, .row td {
+    display: flex;
+    height: 40px;
+    width: 160px;
+    vertical-align: middle;
+    align-items: center;
+    text-align: left;
+}
+
+.row th {
+    font-weight: 500;
+    height: 24px;
+}
+
+.row td:first-child,
+.row th:first-child {
+    width: 440px;
+}
+.row td:last-child,
+.row th:last-child {
+    width: 190px;
+}
+.row td:nth-child(2),
+.row th:nth-child(2) {
+    width: 108px;
+}
+.row td:nth-child(3),
+.row th:nth-child(3) {
+    width: 46px;
+}
+.row td:nth-child(4),
+.row th:nth-child(4) {
+    width: 152px;
+}
+
+.players {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 24px;
+    /* identical to box height, or 150% */
+
+    letter-spacing: 0.24px;
+
+    /* Gray / 700 */
+
+    color: var(--nord6);
+}

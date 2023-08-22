@@ -1,0 +1,77 @@
+.switch {
+    height: 48px;
+    width: 100%;
+    margin: auto;
+}
+
+.switchWrapper {
+    display: flex;
+    /*gap: 11px;*/
+
+    padding: 0;
+    width: 100%;
+    height: 48px;
+    border-radius: 12px;
+
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: var(--nord6);
+
+}
+
+.switchCheckbox {
+    position: absolute;
+    height: 0;
+    width: 0;
+    padding: 0;
+    visibility: hidden;
+}
+
+.switchLabel {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    width: 100%;
+    height: 48px;
+    background: var(--nord6);
+    border-radius: 12px;
+    position: relative;
+    transition: background-color .2s;
+    background: var(--nord3);
+    color: var(--nord6);
+}
+
+.info {
+    width: 100%;
+    text-align: center;
+}
+
+.switchLabel .switchButton {
+    box-sizing: border-box;
+    /*content: '';*/
+    display: flex;
+    position: absolute;
+    /*text-align: center;*/
+    justify-content: center;
+    align-items: center;
+    /*top: calc(50% - 20px/2);*/
+    left: 0;
+    width: 50%;
+    height: 100%;
+    border-radius: 12px;
+    transition: 0.2s;
+    border: 1px solid var(--nord9);
+    background: var(--nord10);
+}
+
+.switchCheckbox:checked + .switchLabel .switchButton {
+    left: calc(50%);
+    /*background: var(--nord10);*/
+    /*border: none;*/
+}
+
+.switchCheckbox:checked + .switchLabel {
+    /*background: var(--nord9);*/
+    /*mix-blend-mode: normal;*/
+}

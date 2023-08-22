@@ -1,0 +1,9 @@
+.gameContainer {
+    width: 663px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+}
