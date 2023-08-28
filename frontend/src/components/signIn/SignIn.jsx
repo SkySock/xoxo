@@ -14,7 +14,7 @@ function SignIn() {
 
     const authStorage = useAuth();
 
-    const validateDict = /^[\w\.]*$/;
+    const validateDict = /^\w*$/;
 
     const usernameHandler = (event) => {
         const val = event.target.value;
@@ -23,11 +23,10 @@ function SignIn() {
 
     const passwordHandler = (event) => {
         const val = event.target.value;
-        validateDict.test(val) && setPassword(val);
+        setPassword(val);
     }
 
     const submitLogin = (event) => {
-        console.log(`Логин: ${username}\nПароль: ${password}`);
 
         authService.logIn(username, password)
             .then((data) => {
@@ -35,6 +34,7 @@ function SignIn() {
             })
             .catch((error) => {
                 console.log(error.response)
+
                 // setError(error.response.data.message)
             })
     }

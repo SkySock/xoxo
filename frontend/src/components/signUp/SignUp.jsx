@@ -5,6 +5,8 @@ import femaleSVG from "../../assets/imgs/female.svg";
 import maleSVG from "../../assets/imgs/male.svg";
 import PrimaryButton from "../ui/buttons/primaryButton/PrimaryButton.jsx";
 import {useState} from "react";
+import {useAuth} from "../../storage/authStorage.js";
+import {observer} from "mobx-react-lite";
 import authService from "../../http/auth.js";
 
 function SignUp() {
@@ -14,6 +16,8 @@ function SignUp() {
     const [confirmPassword, setConfirmPassword] = useState("");
     const [birthday, setBirthday] = useState("");
     const [gender, setGender] = useState(null);
+
+    const authStorage = useAuth();
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -27,7 +31,10 @@ function SignUp() {
 
         console.log(registrationData)
         authService.signUp(registrationData).then((res) => {
-            console.log(res)
+            authService.logIn(username, password)
+                .then((data) => {
+                    authStorage.signIn(data.token);
+                });
         })
     };
 
@@ -85,4 +92,4 @@ function SignUp() {
     )
 }
 
-export default SignUp;
+export default observer(SignUp);

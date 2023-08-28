@@ -8,15 +8,6 @@ import NewPlayerModal from "../../components/modalWindows/newPlayer/NewPlayerMod
 import {useState} from "react";
 
 function PlayersPage() {
-    const [newUserIsOpen, setNewUserIsOpen] = useState(false)
-
-    const openModal = () => {
-        setNewUserIsOpen(true);
-    };
-
-    const closeModal = () => {
-        setNewUserIsOpen(false);
-    };
 
     return (
         <>
@@ -24,15 +15,10 @@ function PlayersPage() {
             <TableContainer>
                 <HeaderString>
                     Список игроков
-                    <div className={classes.btnWrapper}>
-                        <PrimaryButton text={'Добавить игрока'} onClickHandler={openModal}/>
-                    </div>
                 </HeaderString>
                 <PlayersTable />
             </TableContainer>
         </MainContainer>
-
-            {newUserIsOpen && <NewPlayerModal closeHandler={closeModal}/>}
         </>
     )
 }

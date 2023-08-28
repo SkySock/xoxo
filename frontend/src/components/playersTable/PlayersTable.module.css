@@ -37,11 +37,11 @@
 }
 .row td:nth-child(2),
 .row th:nth-child(2) {
-    width: 108px;
+    width: 148px;
 }
 .row td:nth-child(3),
 .row th:nth-child(3) {
-    width: 46px;
+    width: 108px;
 }
 .row td:nth-child(4),
 .row th:nth-child(4) {

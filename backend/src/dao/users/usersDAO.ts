@@ -1,4 +1,4 @@
-import {BaseUserInfoDto, CreateUserDTO, MinimalUserInfoDTO} from "../../dto/users";
+import {BaseUserInfoDto, CreateUserDTO, MinimalUserInfoDTO, UserInfoInListDto} from "../../dto/users";
 import db from "../../database/db";
 import {verifyPassword} from "../../base/utils";
 import {HttpError} from "../../base/errors";
@@ -43,6 +43,23 @@ class UsersDAO {
         const isVerified = await verifyPassword(password, user.password);
 
         return {isVerified, userId: user.id};
+    }
+
+    public async getPaged(limit: number = 20, offset: number = 0) {
+        const users: UserInfoInListDto[] = await db("users")
+            .select(db.raw("id, username, display_name, (extract(epoch from (now() - birthday::date)) / 31536000)::int AS age, gender, joined_at"))
+            .offset(offset)
+            .limit(limit);
+        // console.log(users)
+        return users
+    }
+
+    public async count() {
+        const result = await db("users").count().first();
+        if (!result) {
+            return 0;
+        }
+        return +result.count;
     }
 
 }

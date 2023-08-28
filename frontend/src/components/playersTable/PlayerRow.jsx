@@ -5,21 +5,14 @@ import StatusM from "../ui/status/StatusM.jsx";
 import SecondaryButton from "../ui/buttons/secondaryButton/SecondaryButton.jsx";
 
 function PlayerRow({data}) {
-    let status;
-    if (data.status === 1) {
-        status = <StatusM state={'ready'}>Активен</StatusM>
-    } else {
-        status = <StatusM state={'blocked'}>Заблокирован</StatusM>
-    }
 
     return (
         <tr className={classes.row}>
-            <td>{data.name}</td>
+            <td>{data.display_name}</td>
+            <td>{data.username}</td>
             <td>{data.age}</td>
-            <td>{(data.sex === 2) ? <img src={femaleSvg} /> : <img src={maleSvg} />}</td>
-            <td>{status}</td>
-            <td>{data.createdAt}</td>
-            <td>{(data.status === 1) ? <SecondaryButton text={'Заблокировать'} withIcon={true}/> : <SecondaryButton text={'Разблокировать'} />}</td>
+            <td>{(data.gender === "FEMALE") ? <img src={femaleSvg} /> : <img src={maleSvg} />}</td>
+            <td>{new Date(Date.parse(data.joined_at)).toISOString().substring(0, 10)}</td>
         </tr>
     )
 }

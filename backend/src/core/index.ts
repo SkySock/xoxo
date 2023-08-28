@@ -5,6 +5,8 @@ import {parseJWTMiddleware} from "../middlewares/auth";
 import {XORequest} from "../base/extendsInterfaces";
 import cors from "cors";
 import morgan from "morgan";
+import usersDAO from "../dao/users/usersDAO";
+import {getUsersList} from "../controllers/users/usersListController";
 
 class App {
     public port: string;
@@ -31,10 +33,9 @@ class App {
         app.use(parseJWTMiddleware);
         app.use(morgan("dev"));
 
-        app.post("/v1/signUp", signUpController());
+        app.post("/v1/signUp", signUpController);
         app.post("/v1/signIn", signInController);
-
-        app.get("/v1/test", (req: XORequest, res) => res.json({isAuth: req.isAuth, userId: req.userId}));
+        app.get("/v1/users", getUsersList);
 
         return app;
     }
